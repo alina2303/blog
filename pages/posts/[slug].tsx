@@ -6,11 +6,14 @@ import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
-import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 import type PostType from '../../interfaces/post'
+import fs from 'fs';
+import { join } from 'path';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import PostTitle from '../../components/post-title'
 
 type Props = {
   post: PostType
@@ -54,34 +57,25 @@ export default function Post({ post, morePosts, preview }: Props) {
 
 type Params = {
   params: {
-    slug: string
-  }
-}
+    slug: string;
+  };
+};
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    'title',
-    'date',
-    'slug',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage',
-  ])
-  const content = await markdownToHtml(post.content || '')
+  
+  console.log('params', params)
+  const post = getPostBySlug(params.slug);
 
   return {
     props: {
-      post: {
-        ...post,
-        content,
-      },
+      post
     },
   }
-}
+};
 
-export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+export async function getStaticPaths() {  
+  const posts = getAllPosts()
+  console.log(posts.map(x => x.slug))
 
   return {
     paths: posts.map((post) => {
@@ -93,4 +87,4 @@ export async function getStaticPaths() {
     }),
     fallback: false,
   }
-}
+};

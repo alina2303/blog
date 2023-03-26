@@ -1,0 +1,30 @@
+{
+  "title": "Title",
+  "excerpt": "It has been 7 years since I wrote my first line of code and I feel like sharing the story of how I found my first job as a self-taught programmer with work experience might help someone who is also trying to explore the world of coding.",
+  "coverImage": "/assets/blog/hello-world/cover.jpg",
+  "date": "2022-08-04",
+  "author": {
+    "name": "Tim Neutkens",
+    "picture": "/assets/blog/authors/tim.jpeg"
+  },
+  "ogImage": {
+    "url": "/assets/blog/hello-world/cover.jpg"
+  },
+  "content": [
+    {
+      "type": "text",
+      "className": "h1",
+      "value": "text"
+    },
+    {
+      "type": "text",
+      "className": "p",
+      "value": "some paragraph"
+    },
+    {
+      "type": "code",
+      "className": "code",
+      "value": "```typescript var lol = 1```"
+    }
+  ]
+}
