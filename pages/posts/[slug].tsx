@@ -8,11 +8,7 @@ import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
-import markdownToHtml from '../../lib/markdownToHtml'
 import type PostType from '../../interfaces/post'
-import fs from 'fs';
-import { join } from 'path';
-import { GetStaticPaths, GetStaticProps } from 'next';
 import PostTitle from '../../components/post-title'
 
 type Props = {
