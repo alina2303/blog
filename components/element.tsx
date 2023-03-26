@@ -1,26 +1,37 @@
 import React from 'react';
-import { BaseElement, TextElement, CodeElement, ImageElement } from '../lib/baseElement';
+import {
+    BaseElement,
+    TextElement,
+    CodeElement,
+    ImageElement,
+    isTextElement,
+    isCodeElement,
+    isImageElement
+} from '../lib/baseElement';
 
 
-export function Element(element: BaseElement): JSX.Element | null {
-    switch (element.type) {
-      case 'text': {
+type ElementProps = {
+    element: BaseElement;
+};
+
+const Element: React.FC<ElementProps> = ({ element }) => {
+    if (isTextElement(element)) {
         const { className, value } = element as TextElement;
-        return (<p className={className}>{value}</p>);
-      }
-      case 'code': {
+        return <p className={className}>{value}</p>;
+    }
+
+    if (isCodeElement(element)) {
         const { className, value } = element as CodeElement;
         return (
-          <pre className={className}>
-            <code>{value}</code>
-          </pre>
+            <pre className={className}>
+                <code>{value}</code>
+            </pre>
         );
-      }
-      case 'image': {
+    }
+
+    if (isImageElement(element)) {
         const { className, src, alt } = element as ImageElement;
         return <img className={className} src={src} alt={alt || ''} />;
-      }
-      default:
-        return null;
     }
-}
+    return null;
+};
