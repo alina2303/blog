@@ -10,7 +10,7 @@ const ElementList: React.FC<ElementListProps> = ({ elements }) => {
   return (
     <div>
       {elements.map((element, index) => (
-        <div key={index}>{<Element {...element} />}</div>
+        <div key={index}>{<Element element={element} />}</div>
       ))}
     </div>
   );
