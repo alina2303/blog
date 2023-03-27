@@ -5,13 +5,17 @@ export interface BaseElement {
 
 export interface TextElement extends BaseElement {
     type: 'text';
+    subtype: 'h1' | 'h2' | 'h3' | 'p' | 'span' | 'em' | 'strong';
     value: string;
 }
 
 export interface CodeElement extends BaseElement {
     type: 'code';
-    value: string;
+    language: string;
+    filePath?: string;
+    value?: string
 }
+
 
 export interface ImageElement extends BaseElement {
     type: 'image';

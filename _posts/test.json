@@ -13,18 +13,32 @@
   "content": [
     {
       "type": "text",
-      "className": "h1",
-      "value": "text"
+      "className": "blog-title",
+      "subtype": "h1",
+      "value": "My first job as a self-taught programmer"
     },
     {
       "type": "text",
-      "className": "p",
-      "value": "some paragraph"
+      "subtype": "h2",
+      "className": "blog-subtitle",
+      "value": "A bit about my background"
+    },
+    {
+      "type": "text",
+      "subtype": "p",
+      "className": "blog-paragraph",
+      "value": "I moved to Denmark from Ukraine at the end of 2015 with the purpose of taking a master’s degree in Mathematics, because that is what I was studying in Ukraine. While preparing all the documents to get accepted to the university, I took a course in Web development on Coursera, which is an educational platform similar to Udemy. And I literally fell in love with it because it was more practical compared to what I have been doing before. I was spending all my spare time taking online courses."
+    },
+    {
+      "type": "text",
+      "subtype": "h2",
+      "className": "blog-subtitle",
+      "value": "Job hunting"
     },
     {
       "type": "code",
-      "className": "code",
-      "value": "```typescript var lol = 1```"
+      "language" : "typescript",
+      "value": "var lol = 1"
     }
   ]
 }

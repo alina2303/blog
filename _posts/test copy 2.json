@@ -1,8 +1,8 @@
 {
-  "title": "Test title copy2",
+  "title": "Test title",
   "excerpt": "It has been 7 years since I wrote my first line of code and I feel like sharing the story of how I found my first job as a self-taught programmer with work experience might help someone who is also trying to explore the world of coding.",
   "coverImage": "/assets/blog/hello-world/cover.jpg",
-  "date": "2022-08-02",
+  "date": "2022-08-04",
   "author": {
     "name": "Tim Neutkens",
     "picture": "/assets/blog/authors/tim.jpeg"
@@ -13,18 +13,32 @@
   "content": [
     {
       "type": "text",
-      "className": "h1",
-      "value": "text"
+      "className": "blog-title",
+      "subtype": "h1",
+      "value": "My first job as a self-taught programmer"
     },
     {
       "type": "text",
-      "className": "p",
-      "value": "some paragraph"
+      "subtype": "h2",
+      "className": "blog-subtitle",
+      "value": "A bit about my background"
+    },
+    {
+      "type": "text",
+      "subtype": "p",
+      "className": "blog-paragraph",
+      "value": "I moved to Denmark from Ukraine at the end of 2015 with the purpose of taking a master’s degree in Mathematics, because that is what I was studying in Ukraine. While preparing all the documents to get accepted to the university, I took a course in Web development on Coursera, which is an educational platform similar to Udemy. And I literally fell in love with it because it was more practical compared to what I have been doing before. I was spending all my spare time taking online courses."
+    },
+    {
+      "type": "text",
+      "subtype": "h2",
+      "className": "blog-subtitle",
+      "value": "Job hunting"
     },
     {
       "type": "code",
-      "className": "code",
-      "value": "```typescript var lol = 1```"
+      "language" : "typescript",
+      "filePath": "typescript/test.ts"
     }
   ]
 }

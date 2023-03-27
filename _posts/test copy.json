@@ -23,8 +23,8 @@
     },
     {
       "type": "code",
-      "className": "code",
-      "value": "```typescript var lol = 1```"
+      "language" : "typescript",
+      "value": "var lol = 1"
     }
   ]
 }
