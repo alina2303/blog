@@ -1,4 +1,3 @@
-import { BaseElement } from '../lib/baseElement'
 import type Author from './author'
 
 type PostType = {
@@ -8,10 +7,10 @@ type PostType = {
   coverImage: string
   author: Author
   excerpt: string
-  ogImage: {
+  ogImage?: {
     url: string
   }
-  content: BaseElement[]
+  content: string
 }
 
 export default PostType

@@ -13,13 +13,14 @@ type Props = {
 }
 
 export default function Index({ allPosts }: Props) {
+  
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
     <>
       <Layout>
         <Head>
-          <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+          <title>{`Alina Bo - Coding, tech, life in Denmark`}</title>
         </Head>
         <Container>
           <Intro />
@@ -41,14 +42,8 @@ export default function Index({ allPosts }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
+  const allPosts = getAllPosts();
+  console.table(allPosts);
 
   return {
     props: { allPosts },

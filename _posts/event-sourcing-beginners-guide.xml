@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<post>
+  <title>Event sourcing beginner's guide</title>
+  <excerpt>Learn the fundamentals of event sourcing with my beginner's guide. Gain a deep understanding and practical insights to implement it effectively.</excerpt>
+  <date>2023-04-30</date>
+  <categories>
+    <category>Design pattern</category>
+    <category>Programming</category>
+  </categories>
+  <tags>
+    <tag>Event sourcing</tag>
+  </tags>
+  <author>
+    <name>Alina</name>
+    <picture>/assets/blog/authors/alina.jpeg</picture>
+  </author>
+  <content>
+  <![CDATA[<!-- wp:image {"align":"center","id":68,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image aligncenter size-full"><img src="/assets/blog/posts/imgs/event-store.png" alt="Event storing" class="wp-image-68"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Event sourcing is a powerful technique used in software development that can help developers capture and store all changes made to an application's state. By breaking down the changes into a sequence of events, event sourcing allows developers to reconstruct the entire history of an application's state at any point in time.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>At the heart of <a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing" target="_blank" rel="noreferrer noopener">event sourcing</a> is the concept of an event store, which is essentially a database that records each event as it occurs in an event stream or log. Each event contains data about a specific change made to the application's state, including an event identifier, the type of event, and any relevant data associated with the event.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One key benefit of using an event store is that it allows developers to replay events from the log in order to reconstruct past states of the application. This can be incredibly useful for debugging issues and analyzing performance. Additionally, by selectively replaying old events or creating new ones based on existing ones, developers can implement features like auditing, versioning, and undo/redo functionality.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To use event sourcing effectively, it's important to understand how events are stored in an event stream or log. Events are typically ordered chronologically within the stream or log based on their arrival time. Each individual event object contains information about a specific change made to the application's state.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When replaying events from an event stream or log, developers can use this information to reconstruct past states of the application by applying each individual change represented by each specific event object in turn. This process allows them to see exactly what happened at each point in time and diagnose issues more easily.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">When to Use Event Sourcing: Key Considerations</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">High Data Integrity Requirements</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>One of the key considerations when deciding whether to use event sourcing is the level of data integrity required for your system. Event sourcing provides an immutable log of all events that have occurred in the system, making it easier to track changes and maintain a complete audit trail. This can be particularly useful in systems where data integrity is critical, such as financial systems or healthcare applications.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>By using event sourcing, you can ensure that every change made to the system is recorded and cannot be altered or deleted. This means that if there are any discrepancies or errors in the system, you can easily trace them back to their source and correct them.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Complex Business Logic</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Another consideration when deciding whether to use event sourcing is the complexity of your business logic. If your system involves multiple steps and interactions between different components, <a href="https://microservices.io/patterns/data/event-sourcing.html" target="_blank" rel="noreferrer noopener">event sourcing</a> can help simplify the process by providing a clear record of what happened at each step.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For example, consider an e-commerce application that allows customers to place orders for products. The business logic for this application may involve several steps, such as checking inventory levels, processing payments, and updating order status. By using event sourcing, you can keep track of each step in the process and ensure that everything happens in the correct order.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Need for Scalability</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Scalability is another important consideration when deciding whether to use event sourcing. Event sourcing can help improve scalability by allowing you to distribute processing across multiple nodes or servers. Each node can process events independently without needing to coordinate with other nodes.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This means that as your system grows and more users interact with it simultaneously, you can add more nodes or servers to handle the increased load without affecting performance.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Historical Analysis Requirements</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>If you need to perform historical analysis on your data, event sourcing can be a valuable tool. Because it maintains a complete history of all events, you can easily analyze trends and patterns over time.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For example, consider a social media platform that wants to analyze user engagement over time. By using event sourcing, the platform can keep track of every action taken by users, such as liking posts or commenting on them. This data can then be used to identify trends and patterns in user behavior over time.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Flexibility Requirements</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Finally, flexibility is another consideration when deciding whether to use event sourcing. Event sourcing can be a good choice if you need a flexible system that can adapt to changing requirements over time.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Because events are stored independently of the system's current state, you can easily add new features or change existing ones without disrupting the existing system. This means that you can evolve your system over time without having to worry about compatibility issues or breaking existing functionality.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Structuring Event Handler Logic: Best Practices</h2>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":61,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/event-sourcing.png" alt="Event storming" class="wp-image-61"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Storing events is crucial for event processing</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Events are the backbone of event sourcing, and storing them properly is essential for efficient event processing. there are several best practices that developers should follow to ensure that events are captured and processed accurately.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One of the most important best practices is to use a reliable event store to ensure that all events are captured and stored accurately. The event store should be designed to handle large volumes of data and provide high availability and fault tolerance. It should also support querying capabilities so that developers can easily retrieve specific events based on certain criteria.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Processing selection logic should be separated from domain logic</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Another best practice for structuring event handler logic is to separate processing selection logic from domain logic. This separation improves code readability and maintainability by keeping each piece of code focused on its specific responsibility.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To achieve this separation, developers can use an event processor to handle the processing selection logic while keeping the domain logic separate. The event processor acts as a mediator between the domain logic and the stored events, selecting which events need to be processed based on certain criteria.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Use a process method to handle business logic</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Once the appropriate events have been selected for processing, they need to be passed through a process method where business logic can be applied based on the received events. This method should be kept separate from the event processor and should only take action based on the received events.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The process method can also include error-handling mechanisms in case any errors occur during processing. By separating business logic from other parts of the code, developers can improve code maintainability and make it easier to test individual components.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Keep domain logic separate from event processing</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Domain logic should always be kept separate from event processing so that it remains focused on business requirements. Developers can achieve this separation by using a separate module or class specifically designed for handling domain logic.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This approach allows developers to focus solely on implementing business requirements without worrying about the details of event processing. The domain logic can be called from the process method when necessary, keeping each piece of code focused on its specific responsibility.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Examples of Event Sourcing in Action: External Query and Updating External Systems</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">External Query and Updating External Systems with Event Sourcing</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Event sourcing is a powerful technique for building robust, scalable, and reliable software systems. It enables external queries to be performed on the data store of a sourced system, without affecting the integrity of the event log. This means that when an external query is made, the event-sourcing system reconstructs the current state of the sourced system by replaying all relevant events up to that point in time.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This allows for temporal queries to be made, which can provide valuable insights into the history of a business process or system. For example, if you want to know how many orders were placed on your e-commerce platform last month, you can perform an external query on your event log to get that information. The event sourcing system will replay all relevant events up to that point in time and calculate the total number of orders.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another use case for external queries with event sourcing is debugging and troubleshooting. If something goes wrong in your system, you can use an external query to see what happened at a specific point in time. You can also use temporal queries to analyze trends over time and identify patterns or anomalies.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Event sourcing also facilitates updating external systems in a consistent and reliable manner by publishing new events that reflect changes made within the sourced system. A simple example use case for this would be updating a separate reporting database with new sales data from an e-commerce platform. By sourcing these updates through the event log, conflicting updates can be avoided, and an audit log can be maintained for future reference.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Example event sourcing of e-commerce platform</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Let's say you have an e-commerce platform that generates sales data every day. You want to update a separate reporting database with this data so that you can generate reports and analyze trends over time. With event sourcing, you can publish new events every day that reflect the sales data generated by your e-commerce platform.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>These events are then consumed by your reporting database, which updates its records accordingly. Since the events are sourced through the event log, conflicting updates can be avoided. If two events conflict with each other (e.g., if they both try to update the same record), the event sourcing system will detect this and raise an error.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another advantage of using event sourcing for updating external systems is that it provides a clear audit trail. Every change made within the sourced system is recorded as an event in the event log. This means that you can trace back every update made to your reporting database to its source within the e-commerce platform.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Event sourcing also works well with Command Query Responsibility Segregation (<a href="https://alinabo.com/command-query-responsibility-segregation/">CQRS</a>), which is a pattern for separating read and write operations in a software system. With <strong><a href="https://alinabo.com/event-sourcing-c-sharp/">CQRS</a></strong>, you have separate models for reading and writing data, which allows you to optimize each model for its specific use case.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For example, your read model might be optimized for fast queries and reporting, while your write model might be optimized for consistency and reliability. By using event sourcing to synchronize these models, you can ensure that they stay consistent over time.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Tracking Ships with Event Sourcing: A Case Study</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Event sourcing is a powerful tool that can be used to track ships and their cargo in real-time. By creating a stream of events that represent changes to ship objects and cargo movements, event-driven architecture allows for easy tracking and auditing of all movements. In this case study, we will explore how event sourcing was used to track a class cargo ship's movements from port to port.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Creating the Stream</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>To begin the process of tracking the ship, a <strong>stream</strong> was created using event-driven design principles. Each change to the ship or cargo was recorded as a message in the stream, allowing for easy tracking and auditing of all movements. This approach allowed for seamless communication between different systems involved in the tracking process, such as the shopping cart and invoice processor.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Using Gateways and Message Brokers</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>To ensure that all records were accurate and up-to-date, gateways and message brokers were used during the tracking process. These tools allowed for seamless communication between different systems involved in the process, ensuring that data was transmitted accurately and efficiently.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Auditing with Event Sourcing</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The audit trail provided by event sourcing allowed for easy troubleshooting and identification of any issues that may arise during the tracking process. This feature ensured that all records were accurate and up-to-date, providing peace of mind for those involved in shipping logistics.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Tracking Cargo Movements</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>One of the most important aspects of tracking ships is keeping track of their cargo movements. With event sourcing, each movement was recorded as an event in the stream, allowing for easy tracking of all cargo movements at each port along its journey.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Storing Data on Streams</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>All data related to ship objects and cargo movements were stored on streams using event-driven architecture principles. This approach ensured that data was easily accessible when needed while also providing an audit trail for troubleshooting purposes.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Real-Time Tracking</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>By using event-driven architecture principles, it was possible to track ships in real time. This feature allowed for quick decision-making and problem-solving during the shipping process, ensuring that all cargo arrived at its destination on time and in good condition.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Understanding the Event Sourcing Pattern: Benefits and Limitations</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Benefits of Using the Event Sourcing Pattern</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The event sourcing pattern is a powerful way to store data by capturing all changes made to an application's state as a sequence of events. One of the key benefits of using event sourcing is that it provides a complete audit trail of all changes made to an application's state, which can be useful for debugging and compliance purposes.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>By storing events rather than just the current state, developers can easily track how the system got to its current state. This means that if something goes wrong, developers can quickly identify what caused the issue and fix it. Additionally, because all changes are recorded in real-time, developers can easily see how users interact with the system over time.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another benefit of event sourcing is that it allows for easy scalability and performance optimization. Since events can be processed asynchronously and in parallel, they can be distributed across multiple servers or even data centers. This means that applications built using event sourcing are highly scalable and performant.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For example, imagine an <strong>e-commerce</strong> website that uses event sourcing to store user interactions. When a user adds an item to their cart or makes a purchase, this action is recorded as an event. As more users interact with the site, more events are generated and stored in the database.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Since events are lightweight and contain only essential information about each interaction (such as product ID, and quantity purchased), they take up very little space compared to traditional database records. This means that even if millions of users interact with the site every day, there will be no significant impact on performance.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Limitations of Using Event Sourcing</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>While there are many benefits to using event sourcing, there are also some limitations that need to be considered before implementing this pattern in your application.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One <strong>limitation</strong> is increased complexity. Because events must be carefully managed and ordered correctly to ensure consistency across different parts of the system, implementing event sourcing requires additional development effort compared to traditional database approaches.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Additionally, since events are stored in a sequence, it can be challenging to modify past events without breaking the consistency of the system. This means that developers need to carefully consider how they structure their event streams and ensure that they can handle changes over time.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another limitation is the need for careful management of event streams to avoid data loss. Since events are generated in real time, there is always a risk that some events may be lost due to network issues or other problems. To mitigate this risk, developers must implement robust error handling and backup strategies to ensure that all events are captured and stored correctly.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Key differences between Event Sourcing and event streaming</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Event sourcing and event streaming are two different methods for working with event data. While both involve processing and analyzing events, they have different use cases and approaches.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Event Sourcing Pattern</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Event sourcing is a pattern for storing events as the primary source of truth. With this approach, events are stored in an event store or event log in order to create a complete history of all changes made to the system over time. This makes it possible to recreate the state of the system at any point in time by replaying the events that led up to that state.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Storing Events</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In contrast, event streaming is a method for processing and analyzing real-time streams of events. Rather than storing events in an event store or log, event streaming typically involves processing events in real-time using streams.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Order Events</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>One key difference between these two approaches is how they handle ordering of events. With event sourcing, events are stored in order and can be replayed to recreate the state of the system at any point in time. In contrast, event streaming typically focuses on processing events as they occur, without necessarily preserving their order.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Temporal Queries</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Another difference between these two approaches is their suitability for temporal queries and historical analysis. Event sourcing is well-suited for these types of queries because it allows for easy replaying of old events from the event log or store. This makes it possible to analyze how the system has changed over time and identify trends or patterns that may not be immediately apparent from looking at current data alone.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Real-Time Processing</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>On the other hand, event streaming is better suited for real-time event processing and responding to specific events as they occur. Because streams are processed in real time, this approach can be used to trigger actions based on specific conditions or patterns detected within incoming data streams.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Event Processor</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Implementing an event sourcing pattern typically requires an event processor to read and process events from the event store or log. This processor can then update the system state based on the events that have occurred. In contrast, event streaming often involves multiple streams and complex event processing pipelines that may include filtering, aggregation, and other operations.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Replaying Events</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>One advantage of event sourcing is that it makes it easy to replay old events in order to recreate past states of the system. This can be useful for debugging or testing purposes, as well as for historical analysis. With event streaming, it may be more difficult to recreate past states of the system because events are not necessarily preserved in order.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Specific Event</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Event streaming is better suited for responding to specific events as they occur. For example, a real-time data stream from a sensor network could trigger an alert if certain conditions are met. With event sourcing, it may be more difficult to respond to specific events in real-time because events need to be processed in order.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Key Takeaways from Using Event Sourcing</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Replay events to rebuild state</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>One of the key takeaways from using event sourcing is the ability to replay events to rebuild the state of your application at any point in time. This is incredibly useful for debugging and auditing purposes. With traditional approaches, it can be difficult to trace back through the history of an application and understand what happened at a specific point in time. However, with event sourcing, you have a complete history of all events that have occurred in your application.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Eventual consistency</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Another benefit of event sourcing is eventual consistency. This means that even if there are temporary inconsistencies between different parts of the application, they will eventually be resolved. With traditional approaches, it can be challenging to ensure consistency across different parts of an application, especially as it scales. However, with event sourcing, eventual consistency is built-in.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Better scalability</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Event sourcing can also help improve scalability by allowing you to distribute processing across multiple nodes. Since each node can independently process events, this makes it easier to scale horizontally as demand increases. In addition, because each node only needs access to a subset of the data (i.e., the events relevant to its processing), this helps reduce network traffic and improve performance.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Improved fault tolerance</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Because event sourcing stores all events that occur in an application, it's possible to recover from failures much more easily than with traditional approaches. For example, if a node goes down or data becomes corrupted on one server, you can simply spin up another node and replay all the events since the last snapshot was taken.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Facilitates event-driven architecture</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Event sourcing is a natural fit for event-driven architecture since it provides a way to capture and process events in a scalable and fault-tolerant way. By using messaging systems such as Kafka or RabbitMQ alongside event sourcing patterns like CQRS (Command Query Responsibility Segregation), you can create highly decoupled systems that are easy to maintain and extend over time.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Enables better analytics</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>With event sourcing, you have a complete history of all events that have occurred in your application. This makes it easier to perform analytics and gain insights into how your application is being used. For example, you can use this data to track user behavior, identify trends over time, or optimize performance based on usage patterns.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Real-world examples</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There are many real-world examples of companies using event sourcing to improve their applications. For example, LinkedIn uses event sourcing for its messaging platform. By capturing every message sent between users as an event, they're able to provide features like search and filtering that wouldn't be possible with traditional approaches.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another example is Walmart's inventory management system. By using event sourcing alongside CQRS and other patterns, they were able to create a highly scalable system that could handle millions of transactions per second across thousands of stores.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Event sourcing has gained popularity in recent years due to its benefits for scalability, fault tolerance, and analytics. Many large companies such as LinkedIn and Walmart have adopted this approach successfully.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>According to a survey conducted by Lightbend in 2019, 77% of respondents reported using event-driven architecture (EDA) in production environments. Of those who used EDA, 55% reported using event sourcing specifically.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Final Thoughts on the Importance of Event Sourcing for Modern Applications</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In conclusion, event sourcing is a powerful pattern that can help modern applications manage their application state more effectively. By capturing every change made to an application's state as a series of events, developers can reconstruct the current application state at any point in time. This provides several benefits, including improved data consistency, better audit trails, and simplified debugging.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, event sourcing does come with some limitations. For example, it can be challenging to implement correctly due to its distributed nature. Additionally, it may not be suitable for all types of applications or use cases.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Despite these challenges, event sourcing remains a valuable tool for developers looking to build modern applications that are scalable and resilient. By leveraging this pattern and following best practices for structuring event handler logic and implementing tools like Eventuate, developers can take full advantage of its benefits while minimizing its drawbacks.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To illustrate the power of event sourcing in action, we explored several examples throughout this article. From tracking ships in real time to updating external systems using external queries, event sourcing has proven itself to be a versatile tool that can be applied in many different contexts.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As with any technology or pattern, it's essential to understand the key differences between event sourcing and other related concepts like event streaming. While these two patterns share some similarities, they have distinct use cases and should not be used interchangeably.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Finally, when working with event sourcing or any other technology or pattern for that matter - it's crucial to keep an open mind and stay up-to-date with the latest developments in your field. The world of software development is constantly evolving; what works today might not work tomorrow.</p>
+<!-- /wp:paragraph -->]]>
+  </content>
+</post>

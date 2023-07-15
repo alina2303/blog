@@ -1,39 +1,27 @@
 import fs from 'fs'
 import { join } from 'path'
-import { isCodeElement } from './baseElement';
+import { XMLParser } from 'fast-xml-parser'
+
 
 const currentDirectory = process.cwd();
 const postsDirectory = join(currentDirectory, '_posts')
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory).filter((filename) => filename.endsWith('.json'));
+  return fs.readdirSync(postsDirectory).filter((filename) => filename.endsWith('.xml'));
 }
 
 export function getPostBySlug(slug: string) {
-  const realSlug = slug.replace(/\.json$/, '')
-  const fullPath = join(postsDirectory, `${realSlug}.json`)
+  const realSlug = slug.replace(/\.xml$/, '')
+  const fullPath = join(postsDirectory, `${realSlug}.xml`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   
-  const post = JSON.parse(fileContents);
+  const parser = new XMLParser();
+
+  const content = parser.parse(fileContents);
+  const post = content.post;
   post.slug = realSlug;
 
-  processPostContent(post);
-
   return post;
-}
-
-function processPostContent(post: any): void {
-  for (const element of post.content) {
-    if (isCodeElement(element)) {
-      const { filePath } = element;
-
-      if (filePath) {
-        const fullFilePath = join(currentDirectory, '_code' , filePath);
-        const fileContents = fs.readFileSync(fullFilePath, 'utf8');
-        element.value = fileContents;
-      }
-    }
-  }
 }
 
 export function getAllPosts() {

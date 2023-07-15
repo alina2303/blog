@@ -1,15 +1,14 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
-import Layout from '../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+import Container from '../components/container'
+import PostBody from '../components/post-body'
+import Header from '../components/header'
+import PostHeader from '../components/post-header'
+import Layout from '../components/layout'
+import { getPostBySlug, getAllPosts } from '../lib/api'
 import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
-import type PostType from '../../interfaces/post'
-import PostTitle from '../../components/post-title'
+import type PostType from '../interfaces/post'
+import PostTitle from '../components/post-title'
 
 type Props = {
   post: PostType
@@ -19,10 +18,12 @@ type Props = {
 
 export default function Post({ post, morePosts, preview }: Props) {
   const router = useRouter()
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`
+  const title = `${post.title} | Alina Bo`
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
+  
   return (
     <Layout preview={preview}>
       <Container>
@@ -34,7 +35,7 @@ export default function Post({ post, morePosts, preview }: Props) {
             <article className="mb-32">
               <Head>
                 <title>{title}</title>
-                <meta property="og:image" content={post.ogImage.url} />
+                {post.ogImage && <meta property="og:image" content={post.ogImage?.url} />}
               </Head>
               <PostHeader
                 title={post.title}
@@ -58,8 +59,6 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  
-  console.log('params', params)
   const post = getPostBySlug(params.slug);
 
   return {
@@ -71,7 +70,6 @@ export async function getStaticProps({ params }: Params) {
 
 export async function getStaticPaths() {  
   const posts = getAllPosts()
-  console.log(posts.map(x => x.slug))
 
   return {
     paths: posts.map((post) => {
