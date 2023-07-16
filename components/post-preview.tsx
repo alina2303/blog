@@ -11,6 +11,7 @@ type Props = {
   excerpt: string
   author: Author
   slug: string
+  categories: string[]
 }
 
 const PostPreview = ({
@@ -20,7 +21,9 @@ const PostPreview = ({
   excerpt,
   author,
   slug,
+  categories
 }: Props) => {
+  const _categories = typeof (categories) === 'string' ? [categories] : categories;
   return (
     <div>
       {coverImage && <div className="mb-5">
@@ -30,7 +33,7 @@ const PostPreview = ({
         <Link
           as={`/${slug}`}
           href="/[slug]"
-          className="hover:underline"
+          className="title_post-preview"
         >
           {title}
         </Link>
@@ -40,6 +43,9 @@ const PostPreview = ({
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Avatar name={author.name} picture={author.picture} />
+      <p className='post-tag_wrapper'>
+        {_categories.map(x => <span className='post-tag'>{x}</span>)}
+      </p>
     </div>
   )
 }

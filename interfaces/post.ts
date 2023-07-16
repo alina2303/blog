@@ -11,6 +11,9 @@ type PostType = {
     url: string
   }
   content: string
+  categories: {
+    category: string[]
+  }
 }
 
 export default PostType
