@@ -24,7 +24,7 @@
 <!-- /wp:gallery -->
 
 <!-- wp:paragraph -->
-<p><strong>Command Query Responsibility Segregation</strong> (CQRS) is a design pattern that has gained popularity in recent years, particularly in the development of <a href="https://alinabo.com/microservices-design-patterns-top-10/">complex applications</a>. The pattern involves separating the responsibility of handling commands and queries, which can lead to better scalability and performance.</p>
+<p><strong>Command Query Responsibility Segregation</strong> (CQRS) is a design pattern that has gained popularity in recent years, particularly in the development of <a href="/microservices-design-patterns-top-10/">complex applications</a>. The pattern involves separating the responsibility of handling commands and queries, which can lead to better scalability and performance.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -164,7 +164,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>CQRS can cause problems like eventual consistency. This happens when the read model is updated slower than the write model, making them different. This can confuse users. To fix this, <a href="https://alinabo.com/event-sourcing-beginners-guide/">event sourcing</a> can be used.</p>
+<p>CQRS can cause problems like eventual consistency. This happens when the read model is updated slower than the write model, making them different. This can confuse users. To fix this, <a href="/event-sourcing-beginners-guide/">event sourcing</a> can be used.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -176,7 +176,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>One way to mitigate these challenges is by using a framework or library that supports CQRS patterns. Many popular frameworks such as Axon Framework or EventStore provide built-in support for <a href="https://alinabo.com/event-sourcing-c-sharp/">event sourcing</a> and command query separation patterns.</p>
+<p>One way to mitigate these challenges is by using a framework or library that supports CQRS patterns. Many popular frameworks such as Axon Framework or EventStore provide built-in support for <a href="/event-sourcing-c-sharp/">event sourcing</a> and command query separation patterns.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
@@ -264,7 +264,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>The <a href="https://alinabo.com/event-sourcing-c-sharp/" target="_blank" rel="noreferrer noopener">event sourcing</a> pattern records all changes to an app as a list of events. This helps keep track of all actions taken and rebuild past states by replaying events. It's great for keeping accurate records and debugging problems.</p>
+<p>The <a href="/event-sourcing-c-sharp/" target="_blank" rel="noreferrer noopener">event sourcing</a> pattern records all changes to an app as a list of events. This helps keep track of all actions taken and rebuild past states by replaying events. It's great for keeping accurate records and debugging problems.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->

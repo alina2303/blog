@@ -200,7 +200,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Event sourcing also works well with Command Query Responsibility Segregation (<a href="https://alinabo.com/command-query-responsibility-segregation/">CQRS</a>), which is a pattern for separating read and write operations in a software system. With <strong><a href="https://alinabo.com/event-sourcing-c-sharp/">CQRS</a></strong>, you have separate models for reading and writing data, which allows you to optimize each model for its specific use case.</p>
+<p>Event sourcing also works well with Command Query Responsibility Segregation (<a href="/command-query-responsibility-segregation/">CQRS</a>), which is a pattern for separating read and write operations in a software system. With <strong><a href="/event-sourcing-c-sharp/">CQRS</a></strong>, you have separate models for reading and writing data, which allows you to optimize each model for its specific use case.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
