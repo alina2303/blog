@@ -44,7 +44,7 @@ const PostPreview = ({
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Avatar name={author.name} picture={author.picture} />
       <p className='post-tag_wrapper'>
-        {_categories.map(x => <span className='post-tag'>{x}</span>)}
+        {_categories.map((x, i) => <span key={`post-tag-${i}`} className='post-tag'>{x}</span>)}
       </p>
     </div>
   )
