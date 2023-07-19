@@ -32,7 +32,7 @@ const Intro = () => {
             <div className="row align-items-center">
               <div className="col-lg-4 logocon">
                 <a href="/" aria-label="Alina Bo" className="no-icon">
-                  <img className="svg" src="/wp-content/uploads/2022/06/cropped-logo_size.jpg" alt="Alina Bo" />
+                  <img className="svg" src="/assets/blog/logo/cropped-logo_size.jpg" alt="Alina Bo" />
                 </a>
               </div>
               <div className="col-lg-8">
