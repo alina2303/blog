@@ -19,9 +19,9 @@
   <content>
   <![CDATA[
   <h2>
-    <strong>
+    
       Introduction
-    </strong>
+    
   </h2> 
   <figure class="wp-block-image size-large"><img src="/assets/blog/posts/imgs/aggregates.png" alt="DDD aggregates example" class="wp-image-58"/></figure>
   <p>
@@ -40,9 +40,9 @@
     By leveraging best practices and implementation strategies, developers can overcome complexities and pitfalls associated with aggregates, resulting in more robust and maintainable domain models. Let's explore some of these practices and strategies in the following sections.
   </p>
   <h2>
-    <strong>
+    
       Designing DDD Aggregates
-    </strong>
+    
   </h2>
   <p>
     Designing DDD aggregates requires careful consideration of the boundaries, relationships, and responsibilities within the domain model. In this section, we will explore best practices and implementation strategies for designing DDD aggregates that are focused, cohesive, and consistent.
@@ -79,9 +79,9 @@
     To enforce consistency and invariants, aggregates should provide clear methods for modifying their internal state. By encapsulating the modification logic within the aggregate, you can ensure that any changes made to the aggregate's data adhere to the defined rules. This promotes a more reliable and predictable behavior of the domain model.
   </p>
   <h2>
-    <strong>
+    
       Defining DDD Aggregate Roots
-    </strong>
+    
   </h2>
   <h3>
     Understanding the Role of Aggregate Roots
@@ -123,9 +123,9 @@
     By properly defining aggregate roots and their responsibilities, you establish clear transactional boundaries, enforce business rules, and maintain data consistency within the domain model.
   </p>
   <h2>
-    <strong>
+    
       Handling Aggregate Changes
-    </strong>
+    
   </h2>
   <p>
     When working with Domain-Driven Design (DDD) aggregates, effectively managing and handling aggregate changes is crucial. In this section, we will explore best practices and implementation strategies for managing complex business operations within aggregates, maintaining consistency during modifications, and leveraging event sourcing and event-driven architecture with aggregates
@@ -170,9 +170,9 @@
     By incorporating event sourcing and event-driven architecture, you can enhance the modularity, scalability, and maintainability of aggregates, while also ensuring consistent behavior and auditability of the domain model.
   </p>
   <h2>
-    <strong>
+    
       Implementing Repositories for DDD Aggregates
-    </strong>
+    
   </h2>
   <p>
     Repositories play a crucial role in managing the persistence and retrieval of aggregates in Domain-Driven Design (DDD). In this section, we will explore best practices and implementation strategies for implementing repositories, including storing and retrieving aggregates, designing repository interfaces and implementations, and considering caching and performance aspects.
@@ -217,9 +217,9 @@
     Regularly monitor and tune the repository performance by analyzing query execution plans, identifying bottlenecks, and optimizing database indexes or data access strategies when needed.
   </p>
   <h2>
-    <strong>
+    
       Best Practices for DDD Aggregates
-    </strong>
+    
   </h2>
   <p>
     Designing and implementing Domain-Driven Design (DDD) aggregates requires following best practices that promote maintainability, scalability, and consistency. In this section, we will explore key best practices for working with DDD aggregates, including keeping aggregates small and focused, minimizing inter-aggregate relationships, avoiding data duplication, and applying event-driven architecture principles.
@@ -264,9 +264,9 @@
     Applying EDA principles to aggregates can result in a more resilient and flexible architecture. It enables better scalability by distributing processing across multiple components and promotes a loosely coupled design that allows for independent evolution and maintenance of aggregates.
   </p>
   <h2>
-    <strong>
+    
       Implementation Strategies for DDD Aggregates
-    </strong>
+    
   </h2>
   <p>
     Implementing Domain-Driven Design (DDD) aggregates requires thoughtful strategies to ensure effective communication, separation of concerns, and historical analysis. In this section, we will explore implementation strategies for DDD aggregates, including using domain events to communicate changes, applying Command-Query Responsibility Segregation (CQRS) with aggregates, and leveraging event sourcing for auditing and historical analysis.
@@ -317,9 +317,9 @@
     When implementing event sourcing with aggregates, ensure that the event store and replay mechanisms are designed for efficiency and scalability. Consider using techniques like snapshotting to optimize the rebuilding process when dealing with large event streams.
   </p>
   <h2>
-    <strong>
+    
       Conclusion
-    </strong>
+    
   </h2>
   <p>
     In this blog post, we have explored the best practices and implementation strategies for working with Domain-Driven Design (DDD) aggregates. We have discussed various aspects of DDD aggregates, including their definition, importance, design principles, implementation strategies, and benefits. Let's recap the key takeaways and conclude our discussion on DDD aggregates.
@@ -367,27 +367,27 @@
   <p>
     <ol>
       <li>
-        <strong>
+        
           Improved Domain Modeling:
-        </strong>
+        
         DDD aggregates help model complex domains effectively, capturing business concepts and enforcing consistency boundaries.
       </li>
       <li>
-        <strong>
+        
           Maintainability and Extensibility:
-        </strong>
+        
         Well-designed aggregates make the domain model more maintainable and easier to extend as the business requirements evolve.
       </li>
       <li>
-        <strong>
+        
           Scalability and Performance:
-        </strong>
+        
         Properly implemented aggregates, along with strategies like event-driven architecture and CQRS, promote scalability and improve performance by separating concerns and optimizing data access.
       </li>
       <li>
-        <strong>
+        
           Auditing and Historical Analysis:
-        </strong>
+        
         Event sourcing allows for auditing capabilities and the ability to analyze the history of changes to the aggregate's state.
       </li>
     </ol>

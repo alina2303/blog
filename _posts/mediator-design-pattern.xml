@@ -20,7 +20,7 @@
 <!-- /wp:image -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><strong>Introduction</strong></h2>
+<h2 class="wp-block-heading">Introduction</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -36,7 +36,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><strong>Understanding the Mediator Pattern</strong></h2>
+<h2 class="wp-block-heading">Understanding the Mediator Pattern</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -52,7 +52,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><strong>Benefits of the Mediator Pattern</strong></h2>
+<h2 class="wp-block-heading">Benefits of the Mediator Pattern</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -92,7 +92,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><strong>Implementation of the Mediator Pattern</strong></h2>
+<h2 class="wp-block-heading">Implementation of the Mediator Pattern</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -116,7 +116,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><strong>Drawbacks and Considerations</strong></h2>
+<h2 class="wp-block-heading">Drawbacks and Considerations</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -152,7 +152,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><strong>Real-World Use Cases</strong></h2>
+<h2 class="wp-block-heading">Real-World Use Cases</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -200,7 +200,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><strong>Conclusion</strong></h2>
+<h2 class="wp-block-heading">Conclusion</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
