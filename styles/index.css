@@ -156,3 +156,11 @@ article ol,
 article ul {
   padding-left: 40px;
 }
+
+pre{
+  background-color: #eeeef0;
+  max-width: 100%;
+  padding: 20px;
+  margin: 1.5rem 0 3em;
+  overflow-x: auto;
+}

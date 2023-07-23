@@ -9,6 +9,10 @@ import { getPostBySlug, getAllPosts } from '../lib/api'
 import Head from 'next/head'
 import type PostType from '../interfaces/post'
 import PostTitle from '../components/post-title'
+import hljs from 'highlight.js/lib/core';
+import 'highlight.js/styles/github.css';
+// import typescript from 'highlight.js/lib/languages/typescript';
+import csharp from 'highlight.js/lib/languages/csharp';
 
 type Props = {
   post: PostType
@@ -16,13 +20,32 @@ type Props = {
   preview?: boolean
 }
 
+function highlightCodeBlocks(html) {
+  // Define the regular expression pattern to match code blocks
+  var pattern = /<pre><code class="language-csharp">([\s\S]*?)<\/code><\/pre>/g;
+
+  // Replace code blocks with highlighted versions
+  var highlightedHTML = html.replace(pattern, function (match, code) {
+    // Highlight the code using 'csharp' language
+    var highlightedCode = hljs.highlight('csharp', code).value;
+
+    // Return the highlighted version wrapped in <pre><code> tags
+    return '<pre><code class="language-csharp">' + highlightedCode + '</code></pre>';
+  });
+
+  return highlightedHTML;
+}
+
 export default function Post({ post, morePosts, preview }: Props) {
+  
   const router = useRouter()
   const title = `${post.title} | Alina Bo`
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
 
+  hljs.registerLanguage('csharp', csharp);
+  post.content = highlightCodeBlocks(post.content);
   
   return (
     <Layout preview={preview}>
