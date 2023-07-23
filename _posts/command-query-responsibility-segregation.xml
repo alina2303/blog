@@ -18,10 +18,8 @@
   </author>
   <content>
   <![CDATA[<!-- wp:gallery {"linkTo":"none"} -->
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":58,"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="/assets/blog/posts/imgs/cqrs.png" alt="" class="wp-image-58"/></figure>
-<!-- /wp:image --></figure>
-<!-- /wp:gallery -->
+<img src="/assets/blog/posts/imgs/cqrs.png" alt="Command query responsibility segregation drawing" />
+
 
 <!-- wp:paragraph -->
 <p><strong>Command Query Responsibility Segregation</strong> (CQRS) is a design pattern that has gained popularity in recent years, particularly in the development of <a href="/microservices-design-patterns-top-10/">complex applications</a>. The pattern involves separating the responsibility of handling commands and queries, which can lead to better scalability and performance.</p>
