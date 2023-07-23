@@ -18,7 +18,7 @@
   </author>
   <content>
   <![CDATA[<!-- wp:image {"id":73,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="/wp-content/uploads/2023/04/image.jpeg" alt="Saga pattern illustrated " class="wp-image-73"/></figure>
+<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/understanding-saga.jpeg" alt="Saga pattern illustrated " class="wp-image-73"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -467,27 +467,22 @@
 <p>Microservice architecture has become a popular approach to designing complex software systems. By breaking down monolithic applications into smaller, more manageable microservices, developers can achieve greater flexibility, scalability, and resilience. However, designing microservices architecture can be challenging, especially when dealing with multiple services that need to work together to complete transactions. That's where the saga pattern comes in.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
+
 <p>The saga pattern is a way of managing transactions across multiple microservices in a distributed system. It provides a mechanism for ensuring that all services involved in a transaction are executed in the correct order and that any errors or inconsistencies are handled gracefully. The saga pattern consists of two main components: the database per service approach and the orchestration pattern.</p>
-<!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3} -->
+
+
 <h3 class="wp-block-heading">Database per Service Approach</h3>
-<!-- /wp:heading -->
 
-<!-- wp:gallery {"linkTo":"none"} -->
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":74,"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="/wp-content/uploads/2023/04/Screenshot-2023-04-30-at-21.52.19.png" alt="Database per service pattern" class="wp-image-74"/></figure>
-<!-- /wp:image --></figure>
-<!-- /wp:gallery -->
 
-<!-- wp:paragraph -->
+<img src="/assets/blog/posts/imgs/database-per-service.png" alt="Database per service pattern"/>
+
 <p>In traditional monolithic systems, there is usually one central database that stores all the data for the entire application. This can make it difficult to scale the system or make changes without affecting other parts of the application. In contrast, microservices architecture typically involves breaking down an application into smaller services that each have their own data store.</p>
-<!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
+
+
 <p>The database per service approach means that each microservice has its own database system that stores only the data it needs to function. This makes it easier to maintain and scale the system because changes made to one service won't affect other services or their data stores.</p>
-<!-- /wp:paragraph -->
+
 
 <!-- wp:paragraph -->
 <p>For example, imagine an e-commerce platform with several different microservices such as inventory management, order processing, payment processing, and shipping logistics. Each of these services would have its own database system that stores only the relevant information for that service. This allows developers to make changes or updates to one service without affecting other parts of the application.</p>

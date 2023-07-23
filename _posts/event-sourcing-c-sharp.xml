@@ -137,7 +137,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"align":"center","id":62,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image aligncenter size-full"><img src="/wp-content/uploads/2023/04/StoreOptions.bcbabbd0.png" alt="Marten store options" class="wp-image-62"/></figure>
+<figure class="wp-block-image aligncenter size-full"><img src="/assets/blog/posts/imgs/marten.png" alt="Marten store options" class="wp-image-62"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -397,7 +397,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:image {"align":"center","id":58,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image aligncenter size-full"><img src="/wp-content/uploads/2023/04/1_QF4XnD2Zhmv_K-85SOtPIA.png" alt="Command Query Responsibility Segregation graph displaying the gist of it" class="wp-image-58"/></figure>
+<figure class="wp-block-image aligncenter size-full"><img src="/assets/blog/posts/imgs/cqrs.png" alt="Command Query Responsibility Segregation graph displaying the gist of it" class="wp-image-58"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->

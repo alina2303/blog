@@ -287,7 +287,7 @@
     Applying CQRS (Command-Query Responsibility Segregation) with Aggregates
   </h3>
   <p>
-    <a href="https://alinabo.com/command-query-responsibility-segregation">CQRS</a> is a design pattern that separates the responsibilities for reading (queries) and writing (commands) data. Applying CQRS to aggregates can bring several benefits, including improved performance, scalability, and flexibility.
+    <a href="/command-query-responsibility-segregation">CQRS</a> is a design pattern that separates the responsibilities for reading (queries) and writing (commands) data. Applying CQRS to aggregates can bring several benefits, including improved performance, scalability, and flexibility.
   </p>
   <p>
     With CQRS, you split the models and logic for read operations and write operations into separate components. The read side focuses on providing efficient querying and retrieval of data, while the write side handles the modification and persistence of aggregates.

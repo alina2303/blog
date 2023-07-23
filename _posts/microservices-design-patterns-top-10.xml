@@ -124,9 +124,7 @@
 <h2 class="wp-block-heading">Database Per Service Pattern for Microservices</h2>
 <!-- /wp:heading -->
 
-<!-- wp:image {"id":74,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="/wp-content/uploads/2023/04/Screenshot-2023-04-30-at-21.52.19.png" alt="" class="wp-image-74"/></figure>
-<!-- /wp:image -->
+<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/database-per-service.png" alt="Database per service pattern ilustrated"/></figure>
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Each service instance has its own database</h3>
@@ -265,7 +263,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:image {"id":58,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="/wp-content/uploads/2023/04/1_QF4XnD2Zhmv_K-85SOtPIA.png" alt="Command Query Responsibility Segregation graph displaying the gist of it" class="wp-image-58"/></figure>
+<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/cqrs.png" alt="Command Query Responsibility Segregation graph displaying the gist of it" class="wp-image-58"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -388,9 +386,8 @@
 <h2 class="wp-block-heading">Saga microservices design pattern</h2>
 <!-- /wp:heading -->
 
-<!-- wp:image {"id":73,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="/wp-content/uploads/2023/04/image.jpeg" alt="Understanding saga pattern in microservices" class="wp-image-73"/></figure>
-<!-- /wp:image -->
+
+<img src="/assets/blog/posts/imgs/understanding-saga.jpeg" alt="Understanding saga pattern in microservices" />
 
 <!-- wp:paragraph -->
 <p>The <strong>saga</strong> microservices design pattern is a design pattern that helps to maintain data consistency across multiple microservices in large-scale distributed systems. It works by breaking down long-running transactions into smaller, more manageable steps, each of which can be independently executed and rolled back if necessary. The saga pattern is particularly useful in scenarios where multiple microservices must collaborate to complete a single business transaction, such as online shopping carts or financial transactions.</p>
