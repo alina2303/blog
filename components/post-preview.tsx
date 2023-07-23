@@ -38,13 +38,12 @@ const PostPreview = ({
           {title}
         </Link>
       </h3>
-      <div className="text-lg mb-4">
+      <div className="text-gray-500 text-xs mb-4">
         <DateFormatter dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
       <p className='post-tag_wrapper'>
-        {_categories.map((x, i) => <span key={`post-tag-${i}`} className='post-tag'>{x}</span>)}
+        {_categories.map((x, i) => <span key={`post-tag-${i}`} className='post-tag text-sm'>{x}</span>)}
       </p>
     </div>
   )

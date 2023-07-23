@@ -1,5 +1,4 @@
 import { parseISO, format } from 'date-fns';
-import { AiFillCalendar } from 'react-icons/ai';
 
 type Props = {
   dateString: string
@@ -8,11 +7,10 @@ type Props = {
 const DateFormatter = ({ dateString }: Props) => {
   const date = parseISO(dateString)
   return (
-    <div className='flex gap-2 items-center'>
-      <AiFillCalendar style={{ color: "#e6007a" }} />
+    <div className='flex gap-2 items-center text-gray-500' >
       <time
         dateTime={dateString}
-        className="post-date">
+        >
         {format(date, 'LLLL	d, yyyy')}
       </time>
     </div>
