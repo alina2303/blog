@@ -13,6 +13,7 @@ import hljs from 'highlight.js/lib/core';
 import 'highlight.js/styles/github.css';
 // import typescript from 'highlight.js/lib/languages/typescript';
 import csharp from 'highlight.js/lib/languages/csharp';
+import { useEffect, useState } from 'react'
 
 type Props = {
   post: PostType
@@ -37,16 +38,20 @@ function highlightCodeBlocks(html) {
 }
 
 export default function Post({ post, morePosts, preview }: Props) {
-  
+
   const router = useRouter()
+  const [content, setContent] = useState(post.content);
   const title = `${post.title} | Alina Bo`
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
 
   hljs.registerLanguage('csharp', csharp);
-  post.content = highlightCodeBlocks(post.content);
-  
+
+  useEffect(() => {
+    setContent(highlightCodeBlocks(post.content));
+  }, [post.slug]);
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -66,7 +71,7 @@ export default function Post({ post, morePosts, preview }: Props) {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <PostBody content={content} />
             </article>
           </>
         )}
@@ -91,7 +96,7 @@ export async function getStaticProps({ params }: Params) {
   }
 };
 
-export async function getStaticPaths() {  
+export async function getStaticPaths() {
   const posts = getAllPosts()
 
   return {
