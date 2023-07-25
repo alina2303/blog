@@ -206,8 +206,7 @@
         { 
             public int Id { get; set; } 
         }
-        </code>
-    </pre>
+        </code></pre>
     </p>
     <p>By defining separate command classes for each operation, we can easily pass the required parameters and maintain
         clarity in our codebase.</p>
@@ -216,8 +215,7 @@
         logic to execute these operations. A command handler is responsible for processing a specific type of command
         and performing the necessary actions.</p>
     <p>For instance, let's consider a <code class="language-text">PlaceOrderHandler</code> that handles the creation of a new product:</p>
-    <pre>
-        <code class="language-csharp">
+    <pre><code class="language-csharp">
             public class CreateProductHandler : IRequestHandler&lt;CreateProductCommand, int&gt; 
             { 
                 private readonly IProductRepository _productRepository; 
@@ -233,8 +231,7 @@
                     return newProduct.Id; 
                 } 
             }
-        </code>
-    </pre>
+        </code></pre>
     <p>In this example, the <code class="language-text">CreateProductHandler</code> receives a <code class="language-text">CreateProductCommand</code> and performs the necessary steps to
         create a new product in the repository. The handler interacts with the repository, saving the newly created
         product and returning its generated identifier.</p>
@@ -244,8 +241,7 @@
             capabilities</strong>.</p>
     <p>To send a command using MediatR, we can inject an instance of <code class="language-text">IMediator</code> into our desired class and call its
         <strong>Send method</strong>:</p>
-    <pre>
-        <code class="language-csharp">
+    <pre><code class="language-csharp">
             public class ProductService 
             { 
                 private readonly IMediator _mediator; 
@@ -260,8 +256,7 @@
                     return await _mediator.Send(command);  
                 } 
             }
-        </code>
-    </pre>
+        </code></pre>
     <p>By utilizing MediatR's powerful routing mechanism, we can focus on defining our commands and handlers without
         worrying about manual wiring or complex routing logic.</p>
     <h2>Triggering and Testing Notifications in MediatR</h2>
@@ -308,16 +303,14 @@
         information of a specific user in this datastore. Instead of directly manipulating the FakeDataStore instance
         throughout your codebase, you can define an <code class="language-text">UpdateUserCommand</code>> that contains all the necessary information for
         updating the user's details.</p>
-    <pre>
-        <code class="language-csharp">
+    <pre><code class="language-csharp">
             public class UpdateUserCommand : IRequest 
                 { 
                     public int UserId { get; set; } 
                     public string NewName { get; set; } 
                     // Additional properties for other updated fields 
                 }
-        </code>
-    </pre>
+        </code></pre>
     <p>Using MediatR, you can create an <code class="language-text">UpdateUserCommandHandler</code> that handles this command and performs the necessary
         operations on the FakeDataStore. This way, any updates related to users are centralized within this handler.</p>
     <h3>Optimizing Data Transfer Objects with AutoMapper</h3>
@@ -329,16 +322,14 @@
         arise during this process.</p>
     <p>For instance, let's say you have a <code class="language-text">User</code> domain model with various properties such as <code class="language-text">Id</code>, <code class="language-text">Name</code>, and <code class="language-text">Email</code>. To
         create a corresponding <code class="language-text">DTO</code>, you can define a separate class called <code class="language-text">UserDto</code> with identical properties.</p>
-    <pre>
-        <code>
+    <pre><code class="language-csharp">
             public class UserDto 
             { 
                 public int Id { get; set; } 
                 public string Name { get; set; } 
                 public string Email { get; set; } 
             }
-        </code>
-    </pre>
+        </code></pre>
     <p>
         By utilizing <code class="language-text">AutoMapper</code>, you can easily map between the User model and the <code class="language-text">UserDto</code> without writing repetitive
         mapping code manually. This not only saves time but also reduces the chances of introducing bugs due to human
