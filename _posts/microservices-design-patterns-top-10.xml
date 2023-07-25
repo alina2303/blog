@@ -124,7 +124,7 @@
 <h2 class="wp-block-heading">Database Per Service Pattern for Microservices</h2>
 <!-- /wp:heading -->
 
-<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/database-per-service.png" alt="Database per service pattern ilustrated"/></figure>
+<figure"><img src="/assets/blog/posts/imgs/database-per-service.png" alt="Database per service pattern ilustrated" class="image-center"/></figure>
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Each service instance has its own database</h3>
@@ -263,7 +263,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:image {"id":58,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/cqrs.png" alt="Command Query Responsibility Segregation graph displaying the gist of it" class="wp-image-58"/></figure>
+<figure><img src="/assets/blog/posts/imgs/cqrs.png" alt="Command Query Responsibility Segregation graph displaying the gist of it" class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -387,7 +387,7 @@
 <!-- /wp:heading -->
 
 
-<img src="/assets/blog/posts/imgs/understanding-saga.jpeg" alt="Understanding saga pattern in microservices" />
+<img src="/assets/blog/posts/imgs/understanding-saga.jpeg" alt="Understanding saga pattern in microservices" class="image-center"/>
 
 <!-- wp:paragraph -->
 <p>The <strong>saga</strong> microservices design pattern is a design pattern that helps to maintain data consistency across multiple microservices in large-scale distributed systems. It works by breaking down long-running transactions into smaller, more manageable steps, each of which can be independently executed and rolled back if necessary. The saga pattern is particularly useful in scenarios where multiple microservices must collaborate to complete a single business transaction, such as online shopping carts or financial transactions.</p>
@@ -528,7 +528,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:image {"id":61,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/event-sourcing.png" alt="Event sourcing" class="wp-image-61"/></figure>
+<figure"><img src="/assets/blog/posts/imgs/event-sourcing.png" alt="Event sourcing" class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->

@@ -17,7 +17,7 @@
   </author>
   <content>
   <![CDATA[<!-- wp:image {"id":61,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/event-sourcing.png" alt="Event sourcing order example" class="wp-image-61"/></figure>
+<figure><img src="/assets/blog/posts/imgs/event-sourcing.png" alt="Event sourcing order example" class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -137,7 +137,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"align":"center","id":62,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image aligncenter size-full"><img src="/assets/blog/posts/imgs/marten.png" alt="Marten store options" class="wp-image-62"/></figure>
+<figure><img src="/assets/blog/posts/imgs/marten.png" alt="Marten store options" class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -397,7 +397,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:image {"align":"center","id":58,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image aligncenter size-full"><img src="/assets/blog/posts/imgs/cqrs.png" alt="Command Query Responsibility Segregation graph displaying the gist of it" class="wp-image-58"/></figure>
+<figure><img src="/assets/blog/posts/imgs/cqrs.png" alt="Command Query Responsibility Segregation graph displaying the gist of it" class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->

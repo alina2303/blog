@@ -18,7 +18,7 @@
   </author>
   <content>
   <![CDATA[<!-- wp:gallery {"linkTo":"none"} -->
-<img src="/assets/blog/posts/imgs/cqrs.png" alt="Command query responsibility segregation drawing" />
+<img src="/assets/blog/posts/imgs/cqrs.png" alt="Command query responsibility segregation drawing" class="image-center"/>
 
 
 <!-- wp:paragraph -->

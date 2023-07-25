@@ -16,7 +16,7 @@
   </author>
   <content>
   <![CDATA[<!-- wp:image {"id":99,"sizeSlug":"full","linkDestination":"none","className":"is-style-default"} -->
-<figure class="wp-block-image size-full is-style-default"><img src="/assets/blog/posts/imgs/object-dependencies.png" alt="Mediator design pattern" class="wp-image-99"/></figure>
+<figure><img src="/assets/blog/posts/imgs/object-dependencies.png" alt="Mediator design pattern" class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading -->

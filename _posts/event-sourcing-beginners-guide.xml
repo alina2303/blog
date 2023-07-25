@@ -16,7 +16,7 @@
   </author>
   <content>
   <![CDATA[<!-- wp:image {"align":"center","id":68,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image aligncenter size-full"><img src="/assets/blog/posts/imgs/event-store.png" alt="Event storing" class="wp-image-68"/></figure>
+<figure"><img src="/assets/blog/posts/imgs/event-store.png" alt="Event storing" class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -108,7 +108,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:image {"id":61,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/event-sourcing.png" alt="Event storming" class="wp-image-61"/></figure>
+<figure><img src="/assets/blog/posts/imgs/event-sourcing.png" alt="Event storming" class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->

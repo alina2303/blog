@@ -23,7 +23,7 @@
       Introduction
     
   </h2> 
-  <figure class="wp-block-image size-large"><img src="/assets/blog/posts/imgs/aggregates.png" alt="DDD aggregates example" class="wp-image-58"/></figure>
+  <figure><img src="/assets/blog/posts/imgs/aggregates.png" alt="DDD aggregates example" class="image-center"/></figure>
     <p><a href="https://martinfowler.com/bliki/DomainDrivenDesign.html">Domain-Driven Design (DDD)</a> offers a powerful
         approach to building software systems that align closely with real-world domains. At the heart of DDD lies the
         concept of aggregates, which play a crucial role in modeling complex domains effectively. In this section, we

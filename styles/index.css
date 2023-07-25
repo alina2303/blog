@@ -164,3 +164,13 @@ pre{
   margin: 1.5rem 0 3em;
   overflow-x: auto;
 }
+
+.language-text {
+  background-color: #f1f5f9;
+  border-radius: 0.3em;
+}
+
+.image-center {
+  display: block;
+  margin: 0 auto;
+}

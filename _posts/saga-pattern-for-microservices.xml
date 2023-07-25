@@ -18,7 +18,7 @@
   </author>
   <content>
   <![CDATA[<!-- wp:image {"id":73,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/understanding-saga.jpeg" alt="Saga pattern illustrated " class="wp-image-73"/></figure>
+<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/understanding-saga.jpeg" alt="Saga pattern illustrated " class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -314,7 +314,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2021/06/21/Screenshot-2021-06-21-at-15.40.44.png" alt="AWS step function diagram"/></figure>
+<figure class="wp-block-image size-large"><img src="https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2021/06/21/Screenshot-2021-06-21-at-15.40.44.png" alt="AWS step function diagram" class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -374,7 +374,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:image {"id":61,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/event-sourcing.png" alt="Event sourcing" class="wp-image-61"/></figure>
+<figure class="wp-block-image size-full"><img src="/assets/blog/posts/imgs/event-sourcing.png" alt="Event sourcing" class="image-center"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -475,7 +475,7 @@
 <h3 class="wp-block-heading">Database per Service Approach</h3>
 
 
-<img src="/assets/blog/posts/imgs/database-per-service.png" alt="Database per service pattern"/>
+<img src="/assets/blog/posts/imgs/database-per-service.png" alt="Database per service pattern" class="image-center"/>
 
 <p>In traditional monolithic systems, there is usually one central database that stores all the data for the entire application. This can make it difficult to scale the system or make changes without affecting other parts of the application. In contrast, microservices architecture typically involves breaking down an application into smaller services that each have their own data store.</p>
 
