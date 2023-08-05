@@ -31,7 +31,7 @@ const HeroPost = ({
           <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
             <Link
               as={`/${slug}`}
-              href="/[slug]"
+              href={`/${slug}`}
               className="title_post-preview"
             >
               {title}

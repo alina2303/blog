@@ -32,7 +32,7 @@ const PostPreview = ({
       <h3 className="text-3xl mb-3 leading-snug">
         <Link
           as={`/${slug}`}
-          href="/[slug]"
+          href={`/${slug}`}
           className="title_post-preview"
         >
           {title}
