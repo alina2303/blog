@@ -15,7 +15,7 @@
   <content>
   <![CDATA[
   <p>Are you tired of tangled code and complex communication between components? Look no further. <a
-            href="https://www.nuget.org/packages/MediatR/"><strong>MediatR</strong></a>, a lightweight mediator library
+            href="https://www.nuget.org/packages/MediatR"><strong>MediatR</strong></a>, a lightweight mediator library
         in .NET, is here to simplify your life. By following the mediator pattern, it enables loose coupling and better
         organization of your codebase. With MediatR, you can decouple request handling from the rest of your
         application, promoting separation of concerns like never before.</p>
@@ -148,7 +148,7 @@
         broadcasting, and more.</p>
     <h2>Setting up ASP.NET Core API with MediatR for CQRS Pattern</h2>
     <p>To leverage the power of the <a
-            href="https://alinabo.com/command-query-responsibility-segregation">Command Query Responsibility Segregation (CQRS)</a> pattern in your ASP.NET Core API project, you can
+            href="/command-query-responsibility-segregation">Command Query Responsibility Segregation (CQRS)</a> pattern in your ASP.NET Core API project, you can
         integrate MediatR, a popular mediator library that simplifies communication between different components. NET
         Core API with MediatR to implement the CQRS pattern effectively.</p>
     <h3>Configuring Your ASP.NET Core API Project</h3>

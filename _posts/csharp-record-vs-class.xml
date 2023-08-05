@@ -127,7 +127,7 @@
         <h3>Behavior</h3>
         <p>There is a fundamental difference between C# record vs class. Records have value semantics by default,
             meaning
-            they are treated as <a href="https://learn.microsoft.com/en-us/dotnet/standard/collections/">data structures</a> rather than reference types. On the other hand, classes have reference
+            they are treated as <a href="https://learn.microsoft.com/en-us/dotnet/standard/collections">data structures</a> rather than reference types. On the other hand, classes have reference
             semantics unless explicitly overridden.</p>
         <p>Here are some key differences to consider, comparing C# records vs classes:</p>
         <ol>

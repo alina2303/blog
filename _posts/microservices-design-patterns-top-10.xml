@@ -267,7 +267,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p><strong>CQRS</strong> is a microservices design pattern that has been gaining popularity in recent years, especially in the context of microservices. It stands for <a href="/command-query-responsibility-segregation/">Command Query Responsibility Segregation</a> and it essentially separates the command part of an operation from the query part. This separation allows for better scalability and performance in microservices.</p>
+<p><strong>CQRS</strong> is a microservices design pattern that has been gaining popularity in recent years, especially in the context of microservices. It stands for <a href="/command-query-responsibility-segregation">Command Query Responsibility Segregation</a> and it essentially separates the command part of an operation from the query part. This separation allows for better scalability and performance in microservices.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -434,7 +434,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>The <a href="/saga-pattern-for-microservices/">saga</a> microservices design pattern is used in a variety of different industries and applications. For example, many e-commerce platforms use this design pattern to manage complex transactions like online shopping carts. In this scenario, multiple microservices (e.g., inventory management, and payment processing) must collaborate to complete a single business transaction (e.g., purchasing an item).</p>
+<p>The <a href="/saga-pattern-for-microservices">saga</a> microservices design pattern is used in a variety of different industries and applications. For example, many e-commerce platforms use this design pattern to manage complex transactions like online shopping carts. In this scenario, multiple microservices (e.g., inventory management, and payment processing) must collaborate to complete a single business transaction (e.g., purchasing an item).</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -532,7 +532,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p><a href="/event-sourcing-beginners-guide/">Event sourcing</a> is a microservices design pattern that has been gaining popularity in recent years, especially in the context of microservices architecture. It involves storing all changes to an application's state as a sequence of events, rather than just the current state. The event store is the database that stores these events, which can be replayed to recreate the application's state at any point in time.</p>
+<p><a href="/event-sourcing-beginners-guide">Event sourcing</a> is a microservices design pattern that has been gaining popularity in recent years, especially in the context of microservices architecture. It involves storing all changes to an application's state as a sequence of events, rather than just the current state. The event store is the database that stores these events, which can be replayed to recreate the application's state at any point in time.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

@@ -222,7 +222,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>One significant disadvantage of implementing the Saga pattern is its complexity. The Saga pattern involves coordinating multiple transactions across different services or <a href="/microservices-design-patterns-top-10/">microservices</a>. This coordination can be challenging to implement and maintain, requiring a high level of technical expertise.</p>
+<p>One significant disadvantage of implementing the Saga pattern is its complexity. The Saga pattern involves coordinating multiple transactions across different services or <a href="/microservices-design-patterns-top-10">microservices</a>. This coordination can be challenging to implement and maintain, requiring a high level of technical expertise.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -378,11 +378,11 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p><a href="/event-sourcing-beginners-guide/">Event sourcing</a> is a powerful tool that can help you ensure consistency in a distributed system. By storing all events that lead to a particular state, you can easily roll back to a previous state if something goes wrong during the execution of a saga.</p>
+<p><a href="/event-sourcing-beginners-guide">Event sourcing</a> is a powerful tool that can help you ensure consistency in a distributed system. By storing all events that lead to a particular state, you can easily roll back to a previous state if something goes wrong during the execution of a saga.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>When using <a href="/event-sourcing-c-sharp/">event sourcing</a>, each change made to the system is recorded as an event. These events are then stored in an event log or database. When reconstructing the current state of the system, all events leading up to the current state are replayed.</p>
+<p>When using <a href="/event-sourcing-c-sharp">event sourcing</a>, each change made to the system is recorded as an event. These events are then stored in an event log or database. When reconstructing the current state of the system, all events leading up to the current state are replayed.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

@@ -401,7 +401,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>CQRS stands for <a href="/command-query-responsibility-segregation/">Command Query Responsibility Segregation</a>. It is a design pattern that separates the responsibility of handling commands and queries into two different parts of an application. The idea behind CQRS is to have one part of an application that handles all write operations (commands) while another part handles read operations (queries).</p>
+<p>CQRS stands for <a href="/command-query-responsibility-segregation">Command Query Responsibility Segregation</a>. It is a design pattern that separates the responsibility of handling commands and queries into two different parts of an application. The idea behind CQRS is to have one part of an application that handles all write operations (commands) while another part handles read operations (queries).</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -441,11 +441,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Many companies have successfully implemented <a href="/command-query-responsibility-segregation/">CQRS</a> and command handlers in their systems. For example, Microsoft's Azure Cosmos DB uses CQRS to provide scalable read and write operations for their globally distributed database service.</p>
+<p>Many companies have successfully implemented <a href="/command-query-responsibility-segregation">CQRS</a> and command handlers in their systems. For example, Microsoft's Azure Cosmos DB uses CQRS to provide scalable read and write operations for their globally distributed database service.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Another example is Uber's Michelangelo platform which uses CQRS along with event sourcing to power its machine learning infrastructure. By using these <a href="/microservices-design-patterns-top-10/">patterns</a>, they were able to build a highly scalable system that can handle millions of requests per second.</p>
+<p>Another example is Uber's Michelangelo platform which uses CQRS along with event sourcing to power its machine learning infrastructure. By using these <a href="/microservices-design-patterns-top-10">patterns</a>, they were able to build a highly scalable system that can handle millions of requests per second.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
@@ -461,7 +461,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Another important concept in event sourcing in C# is command query responsibility segregation (<a href="/command-query-responsibility-segregation/">CQRS</a>). By separating write operations (commands) from read operations (queries), we can optimize each part of our application for its specific needs. This can lead to improved performance and scalability, especially for complex domains with many concurrent users.</p>
+<p>Another important concept in event sourcing in C# is command query responsibility segregation (<a href="/command-query-responsibility-segregation">CQRS</a>). By separating write operations (commands) from read operations (queries), we can optimize each part of our application for its specific needs. This can lead to improved performance and scalability, especially for complex domains with many concurrent users.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
