@@ -94,7 +94,7 @@
     <p>To implement CQRS using MediatR in ASP.NET Core or .NET 6, follow these steps in order.</p>
     <ol>
         <li>To begin, in order to install the required packages, add the MediatR and
-            <code class="language-text">MediatR.Extensions.Microsoft.DependencyInjection</code> NuGet packages to your project.</li>
+            <code class="language-text">DependencyInjection</code> from <code class="language-text">MediatR.Extensions.Microsoft</code> NuGet packages to your project.</li>
         <li>Define commands and queries in order to separate the classes for commands (write operations) and queries
             (read operations). These classes should encapsulate the necessary data and logic for each operation.</li>
         <li>Implement handlers: For each command or query, create corresponding handler classes that implement the
@@ -111,7 +111,7 @@
     <p>To start using MediatR in your project, you will need to install the "MediatR" NuGet package. This package is
         essential as it provides all the necessary functionality to work effectively with MediatR. However, depending on
         your specific requirements and project setup, you may also need to install additional packages such as
-        <code class="language-text">MediatR.Extensions.Microsoft.DependencyInjection</code> for seamless integration with dependency injection.</p>
+        <code class="language-text">DependencyInjection</code> from <code class="language-text">MediatR.Extensions.Microsoft</code> for seamless integration with dependency injection.</p>
     <p>Installing the required NuGet packages is a straightforward process that can be done through Visual Studio or the
         .NET Core CLI. Once installed, you'll have access to a range of powerful features and capabilities offered by
         MediatR.</p>
@@ -128,13 +128,13 @@
     </ol>
     <h3>Additional Packages for Dependency Injection Integration</h3>
     <p>If you're using a dependency injection container like Microsoft's built-in service provider or any other
-        compatible container, installing the <code class="language-text">MediatR.Extensions.Microsoft.DependencyInjection</code> package is crucial for
+        compatible container, installing the <code class="language-text">DependencyInjection</code> from <code class="language-text">MediatR.Extensions.Microsoft</code> package is crucial for
         seamless integration.</p>
     <p>Follow these steps to install this additional package:</p>
     <ol>
         <li>Open your project in Visual Studio.</li>
         <li>Right-click on the project name in Solution Explorer and select "Manage NuGet Packages."</li>
-        <li>Search for <code class="language-text">MediatR.Extensions.Microsoft.DependencyInjection</code>.</li>
+        <li>Search for <code class="language-text">DependencyInjection</code> from <code class="language-text">MediatR.Extensions.Microsoft</code>.</li>
         <li>Choose the latest version of the package from the search results.</li>
         <li>Click on the "Install" button to initiate the installation process.</li>
         <li>Carefully review any dependencies that will be installed and click "OK" to proceed.</li>
@@ -142,7 +142,7 @@
     <p>By installing this package, you'll gain access to extension methods that simplify the registration of
         MediatR-related services in your dependency injection container, allowing for a smooth integration experience.
     </p>
-    <p>With both the <code class="language-text">MediatR</code> and <code class="language-text">MediatR.Extensions.Microsoft.DependencyInjection</code> packages installed, you're now
+    <p>With both the <code class="language-text">MediatR</code> and <code class="language-text">DependencyInjection</code> from <code class="language-text">MediatR.Extensions.Microsoft</code> packages installed, you're now
         equipped with all the necessary tools to leverage MediatR effectively within your project. These packages
         provide a wide range of features, including request/response handling, query processing, notification
         broadcasting, and more.</p>
