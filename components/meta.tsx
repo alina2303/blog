@@ -9,7 +9,7 @@ const Meta = () => {
         href="/favicon/safari-pinned-tab.svg"
         color="#000000"
       />
-      <link rel="shortcut icon" href="/favicon/favicon.png" />
+      <link rel="shortcut icon" href="/favicon/alina.jpeg" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
